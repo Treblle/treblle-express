@@ -1,0 +1,32 @@
+{
+  "name": "@treblle/express",
+  "version": "0.0.1",
+  "description": "The official Treblle SDK for Express",
+  "main": "index.js",
+  "devDependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.1"
+  },
+  "scripts": {
+    "example": "node --watch examples/example",
+    "lint": "npx prettier --check .",
+    "lint:fix": "npx prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "Treblle",
+    "Express"
+  ],
+  "dependencies": {
+    "@treblle/utils": "^0.1.8"
+  },
+  "author": "Kelvin Omereshone<kelvin@treblle.com>",
+  "license": "MIT",
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
+  }
+}
