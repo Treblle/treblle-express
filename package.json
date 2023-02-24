@@ -1,8 +1,5 @@
 {
-  "dependencies": {
-    "@treblle/utils": "^0.1.4"
-  },
-  "name": "treblle-express",
+  "name": "@treblle/express",
   "version": "0.0.1",
   "description": "The official Treblle SDK for Express",
   "main": "index.js",
@@ -24,7 +21,10 @@
     "Treblle",
     "Express"
   ],
-  "author": "",
+  "dependencies": {
+    "@treblle/utils": "^0.1.8"
+  },
+  "author": "Kelvin Omereshone<kelvin@treblle.com>",
   "license": "MIT",
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
