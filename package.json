@@ -1,6 +1,6 @@
 {
   "name": "@treblle/express",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "The official Treblle SDK for Express",
   "main": "index.js",
   "devDependencies": {
@@ -22,7 +22,7 @@
     "Express"
   ],
   "dependencies": {
-    "@treblle/utils": "^0.1.8"
+    "@treblle/utils": "^0.1.9"
   },
   "author": "Kelvin Omereshone<kelvin@treblle.com>",
   "license": "MIT",
