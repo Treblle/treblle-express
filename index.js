@@ -43,13 +43,13 @@ function treblle({
 
       const protocol = `${req.protocol}/${req.httpVersion}`
 
-      const { payload: maskedResponseBody, error: invalidJSONError } = getResponsePayload(
+      const { payload: maskedResponseBody, error: invalidResponseBodyError } = getResponsePayload(
         res._treblleResponsebody,
         fieldsToMask
       )
 
-      if (invalidJSONError) {
-        errors.push(invalidJSONError)
+      if (invalidResponseBodyError) {
+        errors.push(invalidResponseBodyError)
       }
 
       const trebllePayload = generateTrebllePayload(
