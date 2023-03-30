@@ -22,7 +22,7 @@
     "Express"
   ],
   "dependencies": {
-    "@treblle/utils": "^0.1.9"
+    "@treblle/utils": "^0.1.10"
   },
   "author": "Kelvin Omereshone<kelvin@treblle.com>",
   "license": "MIT",
