@@ -65,7 +65,7 @@ function treblle({
           },
           request: {
             ip: req.ip,
-            url: `${req.protocol}://${req.headers['host']}${req.url}`,
+            url: `${req.protocol}://${req.headers['host']}${req.originalUrl}`,
             user_agent: req.headers['user-agent'],
             method: req.method,
             headers: maskSensitiveValues(req.headers, fieldsToMask),
