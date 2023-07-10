@@ -1,14 +1,14 @@
 {
   "name": "@treblle/express",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "The official Treblle SDK for Express",
   "main": "index.js",
   "devDependencies": {
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "husky": "^8.0.2",
-    "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1"
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "prettier": "^2.8.8"
   },
   "scripts": {
     "example": "node --watch examples/example",
@@ -22,7 +22,7 @@
     "Express"
   ],
   "dependencies": {
-    "@treblle/utils": "^0.1.12"
+    "@treblle/utils": "^0.1.13"
   },
   "author": "Kelvin Omereshone<kelvin@treblle.com>",
   "license": "MIT",
