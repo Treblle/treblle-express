@@ -28,8 +28,8 @@ function treblle({
     // Intercept response body
     const originalSend = res.send
     res.send = function sendOverWrite(body) {
-      originalSend.call(this, body)
       this._treblleResponsebody = body
+      originalSend.call(this, body)
     }
 
     res.on('finish', function onceFinish() {
