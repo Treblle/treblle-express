@@ -4,7 +4,7 @@ const express = require('express')
 // Dont forget to install body-parser with -- npm i body-parser
 const bodyParser = require('body-parser')
 const app = express()
-const PORT = 3000
+const PORT = 4000
 const treblle = require('..')
 
 app.use(bodyParser.json())
@@ -19,7 +19,7 @@ console.log('TREBLLE_PROJECT_ID:', process.env.TREBLLE_PROJECT_ID)
 app.use(
   treblle({
     additionalFieldsToMask: ['code_mobile'],
-    blocklistPaths: ['test'],
+    blocklistPaths: [],
   })
 )
 
@@ -36,11 +36,15 @@ app.use(
 // )
 
 app.get('/', (req, res) => {
-  res.send({ message: 'Hello World!' })
+  res.status(200).send({ message: 'Hello World!' })
 })
 
 app.get('/test/message', (req, res) => {
-  res.send({ message: 'Hello Test!' })
+  res.status(403).send({ message: 'Hello Test!' })
+})
+
+app.get('/healthcheck', (req, res) => {
+  res.sendStatus(204)
 })
 
 app.post('/test', (req, res) => {
@@ -51,6 +55,18 @@ app.post('/test', (req, res) => {
 
   // Send a response
   res.status(200).json({ message: 'Data received successfully' })
+})
+
+app.post('/timeout', (req, res) => {
+  const inputData = req.body
+
+  // Process your inputData here
+  console.log('Received data:', inputData)
+
+  setTimeout(() => {
+    // Send a response
+    res.status(200).json({ message: 'Data received successfully 4 seconds' })
+  }, 4000)
 })
 
 app.listen(PORT, () => {
