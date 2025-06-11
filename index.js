@@ -25,11 +25,13 @@ function treblle({
   return function treblleMiddleware(req, res, next) {
     // Track when this request was received.
     const requestStartTime = process.hrtime()
+    let resolvedLoadTime;
     // Intercept response body
     const originalSend = res.send
     res.send = function sendOverWrite(body) {
       this._treblleResponsebody = body
       originalSend.call(this, body)
+      resolvedLoadTime = getRequestDuration(requestStartTime)
     }
 
     res.on('finish', function onceFinish() {
@@ -85,7 +87,7 @@ function treblle({
             headers: maskSensitiveValues(res.getHeaders(), fieldsToMask),
             code: res.statusCode,
             size: res.get('content-length'),
-            load_time: getRequestDuration(requestStartTime),
+            load_time: resolvedLoadTime,
             body: maskedResponseBody,
           },
           errors,
