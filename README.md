@@ -1,5 +1,63 @@
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/d4bf4c04-aff3-4ec1-ae76-cb398642b2db"/>
+  
+# ⚠️ DEPRECATED PACKAGE
+
+**This SDK has been deprecated in favor of the new unified [Treblle Node.js SDK v2.0](https://www.npmjs.com/package/treblle)**
+
+[![New SDK](https://img.shields.io/badge/Migrate%20to-New%20SDK%20v2.0-blue?style=for-the-badge)](https://www.npmjs.com/package/treblle)
+
+</div>
+
+---
+
+# ⚠️ DEPRECATED - Use New Treblle Node.js SDK v2.0
+
+> **This package is deprecated and no longer maintained. Please migrate to the new unified [Treblle Node.js SDK v2.0](https://www.npmjs.com/package/treblle).**
+
+## 🚀 Migration to New SDK
+
+The new Treblle Node.js SDK v2.0 provides better performance, more features, and unified support for all Node.js frameworks including Express.
+
+### Quick Migration
+
+**Old SDK:**
+```javascript
+const treblle = require('@treblle/express')
+app.use(treblle())
+```
+
+**New SDK v2.0:**
+```javascript
+const { useTreblle } = require('treblle')
+useTreblle(app, {
+  sdkToken: "your-sdk-token",
+  apiKey: "your-api-key"
+})
+```
+
+### Benefits of New SDK
+- 🚀 **40-60% faster** API calls with optimized networking
+- 🧠 **50-70% reduction** in memory usage
+- ⚡ **80-90% faster** field masking
+- 🔧 **Express v5 support** alongside v4.x
+- 🛡️ **Enhanced security** with improved field masking
+- 📊 **Better debugging** and error handling
+
+### Installation
+```bash
+npm install treblle@^2.0.0
+```
+
+## 📖 Documentation
+- [New SDK Documentation](https://docs.treblle.com/integrations/javascript/node/)
+- [npm Package](https://www.npmjs.com/package/treblle)
+
+---
+
+**This repository will be archived soon. Please update your projects to use the new SDK.**
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/056196b6-84dc-4f79-8e36-8b74b21edf85"/>
 </div>
 <div align="center">
 
@@ -14,8 +72,6 @@
 <a href="https://blog.treblle.com" target="_blank">Blog</a>
 <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
 <a href="https://twitter.com/treblleapi" target="_blank">Twitter</a>
-<span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-<a href="https://treblle.com/chat" target="_blank">Discord</a>
 <br />
 
   <hr />
@@ -23,31 +79,32 @@
 
 API Intelligence Platform. 🚀
 
-Treblle is a lightweight SDK that helps Engineering and Product teams build, ship & maintain REST-based APIs faster.
+Treblle is a lightweight SDK that helps Engineering and Product teams build, ship & maintain REST-based APIs faster.
 
 ## Features
 
 <div align="center">
   <br />
-  <img src="https://github.com/user-attachments/assets/b06d459c-d48d-495c-b439-4cbb17ac3f10"/>
+  <img src="https://github.com/user-attachments/assets/0645e7c8-c695-4a3e-880a-d21a6ce23a74"/>
   <br />
   <br />
 </div>
 
-- [API Monitoring & Observability](https://www.treblle.com/features/api-monitoring-observability)
-- [Auto-generated API Docs](https://www.treblle.com/features/auto-generated-api-docs)
-- [API analytics](https://www.treblle.com/features/api-analytics)
-- [Treblle API Score](https://www.treblle.com/features/api-quality-score)
-- [API Lifecycle Collaboration](https://www.treblle.com/features/api-lifecycle)
-- [Native Treblle Apps](https://www.treblle.com/features/native-apps)
+- [API Intelligance](https://treblle.com/product/api-intelligence)
+- [Auto-generated API Docs](https://treblle.com/product/api-documentation)
+- [API analytics](https://treblle.com/product/api-analytics)
+- [Treblle API Governance](https://treblle.com/product/api-governance)
+- [API Security](https://treblle.com/product/api-security)
+- [API Testing](https://treblle.com/product/aspen)
+- [API Assistant](https://treblle.com/product/alfred)
 
 ## How Treblle Works
 
-Once you’ve integrated a Treblle SDK in your codebase, this SDK will send requests and response data to your Treblle Dashboard.
+Once you've integrated a Treblle SDK in your codebase, this SDK will send requests and response data to your Treblle Dashboard.
 
 In your Treblle Dashboard you get to see real-time requests to your API, auto-generated API docs, API analytics like how fast the response was for an endpoint, the load size of the response, etc.
 
-Treblle also uses the requests sent to your Dashboard to calculate your API score which is a quality score that’s calculated based on the performance, quality, and security best practices for your API.
+Treblle also uses the requests sent to your Dashboard to calculate your API score which is a quality score that's calculated based on the performance, quality, and security best practices for your API.
 
 > Visit [https://docs.treblle.com](http://docs.treblle.com) for the complete documentation.
 
@@ -57,38 +114,41 @@ Treblle also uses the requests sent to your Dashboard to calculate your API scor
 
 Masking fields ensure certain sensitive data are removed before being sent to Treblle.
 
-To make sure masking is done before any data leaves your server [we built it into all our SDKs](https://docs.treblle.com/en/security/masked-fields#fields-masked-by-default).
+To make sure masking is done before any data leaves your server [we built it into all our SDKs](https://docs.treblle.com/treblle/data-masking/#default-masked-fields).
 
-This means data masking is super fast and happens on a programming level before the API request is sent to Treblle. You can [customize](https://docs.treblle.com/en/security/masked-fields#custom-masked-fields) exactly which fields are masked when you’re integrating the SDK.
+This means data masking is super fast and happens on a programming level before the API request is sent to Treblle. You can customize exactly which fields are masked when you're integrating the SDK.
 
-> Visit the [Masked fields](https://docs.treblle.com/en/security/masked-fields) section of the [docs](https://docs.sailscasts.com) for the complete documentation.
+> Visit the [Masked fields](https://docs.treblle.com/treblle/data-masking/) section of the docs for the complete documentation.
 
 ## Get Started
 
-1. Sign in to [Treblle](https://identity.treblle.com/login).
-2. [Create a Treblle project](https://docs.treblle.com/en/dashboard/projects#creating-a-project).
-3. [Setup the SDK](#install-the-SDK) for your platform.
+1. Sign in to [Treblle](https://platform.treblle.com).
+2. Create [Workspace and your API](https://docs.treblle.com/guides/getting-started/).
+3. [Setup the SDK](https://docs.treblle.com/integrations/) for your platform.
 
 ### Install the SDK
 
 ```sh
-npm i @treblle/express --save
+npm i treblle --save
 ```
 
-`@treblle/express` expects your Treblle API key and project ID to be set as environment varibles in a `.env` file or in your production environment.
+`treblle` expects your Treblle API key and project ID to be set as environment varibles in a `.env` file or in your production environment.
 
-Below are the environment variable that will be checked by `@treblle/express`
+Below are the environment variable that will be checked by `treblle`
 
 - `TREBLLE_API_KEY`
 - `TREBLLE_PROJECT_ID`
 
-`@treblle/express` expose a treblle function which returns a middlware, you can pass this function to app.use() to register it a middleware.
+`treblle` expose a useTreblle function which configures Treblle for your Express app.
 
 ```js
-const treblle = require('@treblle/express')
+const { useTreblle } = require('treblle')
 const app = express()
 
-app.use(treblle())
+useTreblle(app, {
+  sdkToken: process.env.TREBLLE_SDK_TOKEN,
+  apiKey: process.env.TREBLLE_API_KEY
+})
 ```
 
 Treblle will now now start monitoring requests on your Express server.
@@ -133,9 +193,7 @@ First and foremost: **Star and watch this repository** to stay up-to-date.
 
 Also, follow our [Blog](https://blog.treblle.com), and on [Twitter](https://twitter.com/treblleapi).
 
-You can chat with the team and other members on [Discord](https://treblle.com/chat) and follow our tutorials and other video material at [YouTube](https://youtube.com/@treblle).
-
-[![Treblle Discord](https://img.shields.io/badge/Treblle%20Discord-Join%20our%20Discord-F3F5FC?labelColor=7289DA&style=for-the-badge&logo=discord&logoColor=F3F5FC&link=https://treblle.com/chat)](https://treblle.com/chat)
+Follow our tutorials and other video material at [YouTube](https://youtube.com/@treblle).
 
 [![Treblle YouTube](https://img.shields.io/badge/Treblle%20YouTube-Subscribe%20on%20YouTube-F3F5FC?labelColor=c4302b&style=for-the-badge&logo=YouTube&logoColor=F3F5FC&link=https://youtube.com/@treblle)](https://youtube.com/@treblle)
 
@@ -145,8 +203,7 @@ You can chat with the team and other members on [Discord](https://treblle.com/ch
 
 Here are some ways of contributing to making Treblle better:
 
-- **[Try out Treblle](https://docs.treblle.com/en/introduction#getting-started)**, and let us know ways to make Treblle better for you. Let us know here on [Discord](https://treblle.com/chat).
-- Join our [Discord](https://treblle.com/chat) and connect with other members to share and learn from.
+- **[Try out Treblle](https://docs.treblle.com/en/introduction#getting-started)**, and let us know ways to make Treblle better for you.
 - Send a pull request to any of our [open source repositories](https://github.com/Treblle) on Github. Check the contribution guide on the repo you want to contribute to for more details about how to contribute. We're looking forward to your contribution!
 
 ### Contributors
